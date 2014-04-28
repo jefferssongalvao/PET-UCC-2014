@@ -7,6 +7,7 @@ int main() {
 	int n, s, mov, menor;
 	
 	while(cin >> n && cin >> s) {
+		menor = s;
 		for(int i = 0; i < n; i++){
 			if(cin >> mov > 0) 
 				s += mov;
