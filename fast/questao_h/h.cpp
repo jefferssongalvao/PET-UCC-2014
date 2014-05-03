@@ -1,22 +1,21 @@
 #include <iostream>
 
-using namespace std;
-
-int fib(int n) {
-	
-	int f = n, fibAA = 0, fibA = 1;
-
-    for( int i = 2; i <= n; ++i ) {
-        f     = fibA + fibAA;
-        fibA  = f;
-        fibAA = fibA;
+long long fib(int n) {
+    long long fib1 = 1, fib2 = 1, soma;
+    for(int i = 3; i <= n; i++) {
+        soma = fib1 + fib2;
+        fib1 = fib2;
+        fib2 = soma;
     }
-    
-    return f;
+    return fib2;
 }
 
 int main() {
-	int n, m;
-	while(cin >> n >> m)
-		cout << fib( fib( n ) ) % m << endl;
+    long long tmp;
+    int n, m;
+    while(std::cin >> n >> m) {
+        tmp = fib( fib( n ) );
+        std::cout << tmp % m << std::endl;
+    }
+    return 0;
 }
